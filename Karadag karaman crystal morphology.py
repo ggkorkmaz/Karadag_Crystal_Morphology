@@ -1,18 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[7]:
-
-
-import os
-os.environ["OMP_NUM_THREADS"] = "4"
-
-import warnings
-warnings.filterwarnings(
-    "ignore",
-    message="KMeans is known to have a memory leak on Windows with MKL"
-)
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -27,20 +12,20 @@ from sklearn.metrics import silhouette_score
 # =========================
 
 files_all = {
-    "GS11_Host_Plag": "GS11ANAKAYA plagResults.csv",
-    "GS11_Host_Amph": "GS11ANAKAYA AMPHIBOLEResults.csv",
-    "GS11_Enclave_Plag": "GS11ANKLAVPLAGResults.csv",
-    "GS11_Enclave_Amph": "GS11ANKLAV AMPHIBOLEResults.csv",
+    "GS11_Host_Plag": "GS11H-plag.Results.csv",
+    "GS11_Host_Amph": "GS11H-amp.Results.csv",
+    "GS11_Enclave_Plag": "GS11E-plag.Results.csv",
+    "GS11_Enclave_Amph": "GS11E-amp.Results.csv",
 
-    "GS16_Host_Plag": "GS16ANAKAYA PLAGesults.csv",
-    "GS16_Host_Amph": "GS16ANAKAYA AMFIBOL esults.csv",
-    "GS16_Enclave_Plag": "GS16ANKLAV PLAGesults.csv",
-    "GS16_Enclave_Amph": "GS16ANKLAV AMFIBOLResults.csv",
+    "GS16_Host_Plag": "GS16H-plag.Results.csv",
+    "GS16_Host_Amph": "GS16H-amp.Results.csv",
+    "GS16_Enclave_Plag": "GS16E-plag.Results.csv",
+    "GS16_Enclave_Amph": "GS16E-amp.Results.csv",
 
-    "GS17_Host_Plag": "gs17anakaya plagResults.csv",
-    "GS17_Host_Amph": "gs17anakayamphiboleResults.csv",
-    "GS17_Enclave_Plag": "gs17anklav plagResults.csv",
-    "GS17_Enclave_Amph": "gs17anklavamphiboleResults.csv",
+    "GS17_Host_Plag": "GS17H-plag.Results.csv",
+    "GS17_Host_Amph": "GS17H-amp.Results.csv",
+    "GS17_Enclave_Plag": "GS17E-plag.Results.csv",
+    "GS17_Enclave_Amph": "GS17E-amp.Results.csv",
 }
 
 outdir = Path("Karadag_Pairwise_Crystal_Morphology")
